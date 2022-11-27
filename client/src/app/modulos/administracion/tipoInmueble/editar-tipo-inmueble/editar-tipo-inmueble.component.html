@@ -1,0 +1,23 @@
+<div class="row">
+  <input type="hidden" formControlName="id" />
+  <form class="col s12" [formGroup]="fGroup">
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          formControlName="nombre"
+          id="nombre"
+          type="text"
+          class="validate"
+        />
+        <label class="active" for="nombre">Nombre</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col sm-12">
+        <button class="btn green" (click)="EditarRegistro()">Editar</button>
+        &nbsp;
+        <a class="btn red" routerLink="/admin/listar-tipo-inmueble">Cancelar</a>
+      </div>
+    </div>
+  </form>
+</div>

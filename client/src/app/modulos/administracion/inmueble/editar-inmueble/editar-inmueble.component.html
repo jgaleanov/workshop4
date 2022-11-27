@@ -1,0 +1,49 @@
+<div class="row">
+  <form class="col s12" [formGroup]="fGroup">
+    <input type="hidden" formControlName="id" />
+    <div class="row">
+      <div class="input-field col s3">
+        <input
+          formControlName="propietario"
+          id="propietario"
+          type="text"
+          class="validate"
+        />
+        <label class="active" for="propietario">Propietario</label>
+      </div>
+      <div class="input-field col s3">
+        <input
+          formControlName="direccion"
+          id="direccion"
+          type="text"
+          class="validate"
+        />
+        <label class="active" for="direccion">Dirección</label>
+      </div>
+      <div class="input-field col s3">
+        <input
+          formControlName="telefono"
+          id="telefono"
+          type="text"
+          class="validate"
+        />
+        <label class="active" for="telefono">Teléfono</label>
+      </div>
+      <div class="input-field col s3">
+        <label class="active">Tipo de Inmueble</label>
+        <select formControlName="tipoId" class="browser-default">
+          <option *ngFor="let o of opcionesTipoInmueble" value="{{ o._id }}">
+            {{ o.nombre }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col sm-12">
+        <button class="btn green" (click)="EditarRegistro()">Guardar</button>
+        &nbsp;
+        <a class="btn red" routerLink="/admin/listar-inmueble">Cancelar</a>
+      </div>
+    </div>
+  </form>
+</div>

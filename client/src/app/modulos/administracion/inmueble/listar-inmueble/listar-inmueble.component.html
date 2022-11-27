@@ -1,0 +1,33 @@
+<a routerLink="/admin/agregar-inmueble" class="btn green">Agregar</a>
+<table>
+  <thead>
+    <tr>
+      <th>Propietario</th>
+      <th>Teléfono</th>
+      <th>Dirección</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of listaRegistros">
+      <td>
+        {{ r.propietario }}
+      </td>
+      <td>
+        {{ r.telefono }}
+      </td>
+      <td>
+        {{ r.direccion }}
+      </td>
+      <td>
+        <a routerLink="/admin/editar-inmueble/{{ r._id }}" class="btn orange"
+          >Editar</a
+        >
+        &nbsp;
+        <a routerLink="/admin/eliminar-inmueble/{{ r._id }}" class="btn red"
+          >Eliminar</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
